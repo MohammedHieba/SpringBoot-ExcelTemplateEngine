@@ -6,9 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ResponsePaymentsGeneralBatch implements ExcelBatchMarker {
+public class PaymentsGeneralBatch implements ExcelBatchMarker {
 
-    private static final long serialVersionUID = 4213752578038292059L;
 
     private String borderNumber;
     private String iqamaId;

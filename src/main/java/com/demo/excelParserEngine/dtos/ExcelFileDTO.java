@@ -6,7 +6,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Builder
 public class ExcelFileDTO {
 
