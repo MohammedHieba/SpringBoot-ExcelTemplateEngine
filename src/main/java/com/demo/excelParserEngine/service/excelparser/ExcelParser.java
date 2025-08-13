@@ -1,11 +1,12 @@
-package com.demo.excelParserEngine.dtos;
+package com.demo.excelParserEngine.service.excelparser;
 
+import com.demo.excelParserEngine.dtos.ExcelBatchMarker;
+import com.demo.excelParserEngine.dtos.ExcelFileDTO;
 import io.micrometer.common.util.StringUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import com.demo.excelParserEngine.utils.ExcelUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ abstract public class ExcelParser <T extends ExcelBatchMarker>{
             workbook.close();
 
         }catch (Exception ex){
-            throw new RuntimeException("error.parsing.excel.file");
+            ex.getStackTrace();
+            throw new RuntimeException("error.parsing.excel.file", ex);
         }
         return batches;
     }

@@ -1,14 +1,9 @@
 package com.demo.excelParserEngine.service.excelparser;
 
-
-import com.demo.excelParserEngine.dtos.ExcelBatchMarker;
-import com.demo.excelParserEngine.dtos.ExcelFileDTO;
-import com.demo.excelParserEngine.dtos.ExcelParser;
-import com.thalesgroup.ecorp.srv.dto.ExcelDTO;
+import com.demo.excelParserEngine.dtos.ExcelBatchMarker;;
+import com.demo.excelParserEngine.service.excelparser.ExcelParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sa.alrajhi.ecorp.service.excelParser.ExcelParser;
-
 import java.util.Map;
 
 @Component

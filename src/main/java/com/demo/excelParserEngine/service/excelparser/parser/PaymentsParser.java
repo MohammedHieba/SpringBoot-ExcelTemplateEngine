@@ -1,8 +1,8 @@
 package com.demo.excelParserEngine.service.excelparser.parser;
 
 import com.demo.excelParserEngine.dtos.ExcelFileDTO;
-import com.demo.excelParserEngine.dtos.ExcelParser;
-import com.demo.excelParserEngine.dtos.ResponsePaymentsGeneralBatch;
+import com.demo.excelParserEngine.service.excelparser.ExcelParser;
+import com.demo.excelParserEngine.dtos.PaymentsGeneralBatch;
 import com.demo.excelParserEngine.utils.ExcelUtils;
 import io.micrometer.common.util.StringUtils;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import com.demo.excelParserEngine.utils.ExcelUtils.*;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ import static  com.demo.excelParserEngine.constants.PaymentsConstants.*;
 
 @Component("paymentParser")
 @Scope(value = BeanDefinition.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class PaymentsParser extends ExcelParser<ResponsePaymentsGeneralBatch> {
+public class PaymentsParser extends ExcelParser<PaymentsGeneralBatch> {
 
     public static final Map<String, String> SERVICE_MAP = new HashMap<>();
     static {
@@ -50,8 +50,8 @@ public class PaymentsParser extends ExcelParser<ResponsePaymentsGeneralBatch> {
 
 
     @Override
-    protected ResponsePaymentsGeneralBatch parseRow(int rowNum, ExcelFileDTO excelFileDTO, Sheet sheet, Workbook workbook) {
-        ResponsePaymentsGeneralBatch batch = new ResponsePaymentsGeneralBatch();
+    protected PaymentsGeneralBatch parseRow(int rowNum, ExcelFileDTO excelFileDTO, Sheet sheet, Workbook workbook) {
+        PaymentsGeneralBatch batch = new PaymentsGeneralBatch();
 
         batch.setAccountNumber(excelFileDTO.getAccountNo());
         String serviceName = getServiceLabel(ExcelUtils.getCellValueFromFormula(rowNum, COLUMN_SERVICE, sheet, workbook));
