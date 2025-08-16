@@ -2,7 +2,6 @@ package com.demo.excelParserEngine.Controller;
 
 
 import com.demo.excelParserEngine.dtos.ExcelFileDTO;
-import com.demo.excelParserEngine.dtos.PaymentsGeneralBatch;
 import com.demo.excelParserEngine.dtos.ResponseUploadPaymentFile;
 import com.demo.excelParserEngine.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
